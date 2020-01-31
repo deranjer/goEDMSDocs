@@ -1,27 +1,41 @@
 [
 {
-	"uri": "http://deranjer.github.io/goEDMSDocs/getting-started/",
+	"uri": "https://deranjer.github.io/goEDMSDocs/getting-started/",
 	"title": "Getting Started",
 	"tags": [],
 	"description": "The basics of goEDMS",
 	"content": ""
 },
 {
-	"uri": "http://deranjer.github.io/goEDMSDocs/categories/",
+	"uri": "https://deranjer.github.io/goEDMSDocs/installation/",
+	"title": "Installing goEDMS",
+	"tags": [],
+	"description": "Methods of installing goEDMS",
+	"content": ""
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/using-goedms/",
+	"title": "Using goEDMS",
+	"tags": [],
+	"description": "How to use goEDMS",
+	"content": ""
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/",
+	"title": "Welcome to goEDMS Documentation",
+	"tags": [],
+	"description": "How to use goEDMS",
+	"content": ""
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://deranjer.github.io/goEDMSDocs/",
-	"title": "goEDMS Documentations",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://deranjer.github.io/goEDMSDocs/tags/",
+	"uri": "https://deranjer.github.io/goEDMSDocs/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

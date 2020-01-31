@@ -3,20 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://deranjer.github.io/goEDMSDocs/getting-started/</loc>
+    <loc>https://deranjer.github.io/goEDMSDocs/getting-started/</loc>
     <lastmod>2020-01-29T15:28:02-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://deranjer.github.io/goEDMSDocs/categories/</loc>
+    <loc>https://deranjer.github.io/goEDMSDocs/installation/</loc>
+    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://deranjer.github.io/goEDMSDocs/</loc>
+    <loc>https://deranjer.github.io/goEDMSDocs/using-goedms/</loc>
+    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
   </url>
   
   <url>
-    <loc>http://deranjer.github.io/goEDMSDocs/tags/</loc>
+    <loc>https://deranjer.github.io/goEDMSDocs/</loc>
+    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/tags/</loc>
   </url>
   
 </urlset>
