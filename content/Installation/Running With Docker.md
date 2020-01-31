@@ -1,0 +1,43 @@
++++
+title = "Running With Docker"
+date = 2020-01-30T22:43:47-05:00
+weight = 8
++++
+
+
+
+### Running with Docker
+
+{{% notice warning %}}
+I've never used Docker before, so hopefully this is all setup in the recommended way.  Feel free to open a ticket or chat in gitter with recommendations
+{{% /notice %}}
+
+#### Requirements
+
+* Docker
+* A copy of `serverConfig.toml` from the repo at `dist-specific-files\docker\serverConfig.toml`
+  
+#### Install Steps
+
+Create the following directories (you can name them as you want):
+
+* documents - your document library
+* ingress - files placed in here will be scanned in
+* temp - files that are converted for OCR will be stored here.  Usually safe to delete
+* done - ingressed files will be moved out of the ingress folder to this one
+
+Create the following file:
+
+* goedms.log
+
+#### Docker setup
+
+First, pull the docker image `docker pull deranjer/goedms`.  Then edit `serverConfig.toml` with your correct settings.  The most important change will be to change `APIURL` in the `serverConfig` section.  This URL will be the in the following format: `http://192.168.1.10:8000`.  The IP should be your external IP (not the docker ip addr). The port should be the external port as well.
+
+Next, we need to start the docker container.  We are mounting the directories we created earlier into the container, as well as the `serverConfig.toml` and `goedms.log` file.  When goEDMS starts it will read the config in and configure itself, and then output to the log file.
+
+```shell
+>docker run -d -p 8000:8000 --name goedms -v /sourceDir/documents:/opt/goEDMS/documents -v /sourceDir/ingress:/opt/goEDMS/ingress -v /sourceDir/tmp:/opt/goEDMS/temp -v /sourceDir/done:/opt/goEDMS/done -v /sourceDir/serverConfig.toml:/opt/goEDMS/serverConfig.toml -v /sourceDir/goedms.log:/opt/goEDMS/goedms.log deranjer/goedms:latest
+```
+
+The docker container should start and continue running unless it encounters an error.  You can then access goEDMS from your external IP and port.

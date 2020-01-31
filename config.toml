@@ -1,0 +1,23 @@
+baseURL = "https://deranjer.github.io/goEDMSDocs/"
+languageCode = "en-us"
+title = "goEDMS Documentations"
+theme = "hugo-theme-learn"
+pluralizelisttitles = "false"
+
+[params]
+	themeVariant = "blue"
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i> Github repo"
+identifier = "ds"
+url = "https://github.com/deranjer/goEDMS"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-gitter'></i> Gitter chat"
+identifier = "gitter"
+url = "https://gitter.im/goEDMS/community"
+weight = 11
