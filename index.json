@@ -1,5 +1,12 @@
 [
 {
+	"uri": "http://deranjer.github.io/goEDMSDocs/getting-started/",
+	"title": "Getting Started",
+	"tags": [],
+	"description": "The basics of goEDMS",
+	"content": ""
+},
+{
 	"uri": "http://deranjer.github.io/goEDMSDocs/categories/",
 	"title": "Categories",
 	"tags": [],
