@@ -3,23 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://deranjer.github.io/goEDMSDocs/getting-started/</loc>
-    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
+    <loc>https://deranjer.github.io/goEDMSDocs/gettingstarted/basics/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/gettingstarted/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/installation/installing-from-packages/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/usinggoedms/basics/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://deranjer.github.io/goEDMSDocs/installation/</loc>
-    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
+    <lastmod>2020-01-30T22:53:19-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://deranjer.github.io/goEDMSDocs/using-goedms/</loc>
-    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
+    <loc>https://deranjer.github.io/goEDMSDocs/installation/installing-manually/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/usinggoedms/server-config-file/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/usinggoedms/</loc>
+    <lastmod>2020-01-30T22:53:19-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://deranjer.github.io/goEDMSDocs/</loc>
-    <lastmod>2020-01-29T15:28:02-05:00</lastmod>
+    <lastmod>2020-01-30T22:53:19-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/installation/running-from-source/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/</loc>
+    <lastmod>2020-01-30T22:43:47-05:00</lastmod>
   </url>
   
   <url>

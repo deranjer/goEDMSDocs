@@ -1,31 +1,80 @@
 [
 {
-	"uri": "https://deranjer.github.io/goEDMSDocs/getting-started/",
+	"uri": "https://deranjer.github.io/goEDMSDocs/gettingstarted/basics/",
+	"title": "Basics",
+	"tags": [],
+	"description": "",
+	"content": "The Basics EDMS stands for Electronic Document Management System. Essentially this is used to scan and organize all of your documents. OCR is used to extract the text from PDF\u0026rsquo;s, Images, or other formats that we cannot natively get text from.\ngoEDMS is an EDMS server for home users to scan in receipts/documents and search all the text in them. The main focus of goEDMS is simplicity (to setup and use) as well as speed and reliability. Less importance is placed on having very advanced features.\ngoEDMS consists of two elements, the frontend and the backend. The backend is written in Golang with the Echo framework. It has a REST API that I plan on cleaning up and releasing at some point in the future. This will allow you to write a different frontend or at least send commands to the backend directly.\nThe frontend is written in React and communicates with the backend via the REST API. The frontend is served directly by the Echo framework (on the same port as the backend), but perhaps in the future that can be configured to not launch the frontend automatically so you can swap your own frontend in.\nWhats included Currently goEDMS is in alpha development and has some basic features and document types it supports. The plan is to hopefully add more later. The current supported (but not all of them are actually tested) formats are:\n pdf tiff jpg jpeg png  OCR is provided by tesseract (required) and conversion/cleanup is done by imagemagick (required). These are free to install and use, and most EDMS solutions for home use them.\nThe frontend can display, delete, upload and download documents. Currenty moving documents (via any method) is not supported (and will fatally error out the backend server), but hopefully plan to add that in the future.\n"
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/gettingstarted/",
 	"title": "Getting Started",
 	"tags": [],
-	"description": "The basics of goEDMS",
-	"content": ""
+	"description": "",
+	"content": "Getting Started With goEDMS Discover how goEDMS can help you organize and search your documents.\n"
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/installation/installing-from-packages/",
+	"title": "Installing from Packages",
+	"tags": [],
+	"description": "",
+	"content": "Installing from Packages Requirements  imagemagick tesseract-ocr  The listed package names are the debian package names, they may be named different for your distribution. An installer/package is not available for Windows currently.\n The preferred method for installation is to install the dependencies first, then the .deb/.rpm.\nThe .deb/.rpm packages assume you are using systemd as an init system as they install a systemd init file for goEDMS\n So an example install would go as follows:\nsudo apt-get install tesseract-ocr imagemagick\rdpkg -i goEDMS-version.deb\rThe default install path for goEDMS is /opt/goEDMS.\nAfter install goEDMS should automatically start. However, most likely you will want to edit the serverConfig.toml (located in /opt/goEDMS) with your specific settings. So you can stop goEDMS systemctl stop goedms, then edit the serverConfig.toml and then start goEDMS (systemctl start goedms). The initial startup log will appear in syslog, (or view the systemctl log), but after that the log will appear in goedms.log, located in /opt/goEDMS/.\n"
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/usinggoedms/basics/",
+	"title": "The Basics",
+	"tags": [],
+	"description": "",
+	"content": "The Basic Flow Adding Documents Adding documents is currently supported via two methods. The first is by placing them in the \u0026ldquo;ingress\u0026rdquo; folder. The backend periodically scans the folder and adds any documents placed in that folder. The other method is by uploading them from the web interface. I hope to add a few more methods at some point.\nSearching Documents On the react frontend there is a search box, enter your search term there. Currently goEDMS only does a \u0026ldquo;loose\u0026rdquo; search which matches that term in any configuration/file it finds and returns all the documents that contain that term. I hope to add more search options soon.\nManaging Documents All document management currently MUST be done from the frontend. Currently any mismatch in what the database expects vs what it finds will cause a fatal error. I hope to make it much more resilient in the future. From the frontend you can upload documents, delete documents, view documents and download documents.\nFiles    File Name Description     goEDMS.db This stores all the information about the documents, like their location, name, upload time, direct URL, ULID (similar to UUID), hash, and OCR results   simpleEDMSIndex.bleve This is a folder/database that contains the optimized index for searching all OCR results   serverConfig.toml Stores all of the configuration options for goEDMS   goedms.log Log file for goEDMS   public/built Folder that contains the react frontend. frontend-config.js is the only file that should be of interest to you, that contains the URL that the frontend uses to connect to the backend. It should be automatically generated when goEDMS configures on startup.   documents Contains your document database. This should not be manually edited   done Ingressed documents are moved here after processing. You CAN delete these without messing up goEDMS, but make sure they are backed up   ingress goEDMS searches this file periodically for new documents to scan   temp goEDMS writes and image here as needed to OCR documents    "
 },
 {
 	"uri": "https://deranjer.github.io/goEDMSDocs/installation/",
-	"title": "Installing goEDMS",
+	"title": "Installation",
 	"tags": [],
-	"description": "Methods of installing goEDMS",
-	"content": ""
+	"description": "",
+	"content": "Installation Installing goEDMS Strap in, some say there are too many ways to install goEDMS!\n"
 },
 {
-	"uri": "https://deranjer.github.io/goEDMSDocs/using-goedms/",
+	"uri": "https://deranjer.github.io/goEDMSDocs/installation/installing-manually/",
+	"title": "Installing Manually/From Archive",
+	"tags": [],
+	"description": "",
+	"content": "Installing from Compressed Archive This is the only option for Windows currently, and is also available for Linux and MacOS.\nRequirements  imagemagick tesseract-ocr  For linux install the above packages from your package manager, they should be available for most distributions, although those are the debian package names, they might be named different for your distro. For Windows download the installers for both programs and install them in your preferred location.\nRecommended Steps  Make Directory for goEDMS Extract the archive at the root of the directory Ensure the goEDMS binary is marked as executable Make user specifically to run goEDMS Make the user owner of the goEDMS directory Modify the ServerConfig.toml file to reflect your desired settings Add goEDMS to your init system (a systemd start file is included in the repo in \u0026ldquo;dist-specific-files\\Linux-systemd\u0026rdquo;) Run the goEDMS binary manually to watch for errors Check the goedms.log file for errors if it starts successfully Start goEDMS via your init system  "
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/usinggoedms/server-config-file/",
+	"title": "The Server Config File",
+	"tags": [],
+	"description": "",
+	"content": "The Basics The serverConfig.toml file is what stores all of the configuration for goEDMS. It can be either placed in the same directory as the binary file, or in a folder named config that is in the same directory as the binary. The serverConfig.toml file should have basic documentation in it on what the various settings do, that will be added here and maybe some more explanation.\nserverConfig    Section Option Description Input Format Notes     serverConfig ServerPort Required to input as string String This is the port you want the server to bind to.   serverConfig ServerAddr Put in the IP address you want to bind to as string, if blank will bind to all available addresses String None   serverConfig APIURL This is for EXTREME edge cases where you want to manually force the API URL, like with Docker, usually leave blank String In format (usually, unless running behind proxy) http://192.168.1.10:8000   documentLibrary DocumentFileSystemLocation Location to store documents String Relative or absolute path accepted, the server will convert any relative path to an absolute path.   documentLibrary DefaultNewDocumentFolder default folder that ingressed documents will be placed in (inside the Document library), for multiple folders deep can do \u0026lsquo;2020/New\u0026rsquo; String If PreserveDirStructure is set to false all files will go in the New folder, if it is true, the New folder will be created but not used.   ingress IngressPath default path that the server will scan for new documents String Can be absolute or relative   ingress.scheduling IngressInterval number of minutes between scans of the ingress folder Integer None   ingress.completed IngressDeleteOnProcess #If True will delete files from ingress folder after processed (will leave ones if they produce error), if false will move to another folder Boolean Will move it to folder \u0026ldquo;done\u0026rdquo; by default   ingress.completed IngressMoveFolder default path that the server will move processed ingress documents to String None   ingress.handling PreserveDirStructure if nested folders are in the ingress path will copy that existing structure to document storage Boolean None   ocr TesseractBin #Path to Tesseract binary (required for OCR) #Windows paths need to be formatted as such: C:\\\\Program Files\\\\Tesseract-OCR\\\\tesseract.exe String Common linux path is \u0026quot;/usr/bin/tesseract\u0026quot;   ocr MagickBin Path to ImageMagick (required for OCR) String IMPORTANT For linux, the MagickBin command needs to be to the \u0026ldquo;convert\u0026rdquo; binary, for Windows it is \u0026ldquo;magick.exe\u0026rdquo;   authentication CURRENTLY NOT IMPLEMENTED None None    reverseProxy ProxyEnabled This is for setting up goEDMS behind a reverse Proxy (with SSL), as a subdomain route (https://goedms.domain.com) String None   reverseProxy BaseURL URL is CASE SENSITIVE # MUST be in the subdomain format, NO trailing slash (suburl proxy does not work, i.e. https://domain.com/goedms) String None   frontend NewDocumentNumber CURRENTLY NOT IMPLEMENTED None None   logging Level debug, info, warn, error, fatal String Only accepts the description values, nothing else   logging OutputPath file or stdout String Only accepts \u0026ldquo;file\u0026rdquo; or \u0026ldquo;stdout\u0026rdquo; stdout just outputs it to the shell or syslog   logging LogFileLocation Location of Log file (if file selected for OutputPath) String None   notifications PushBulletToken CURRENTLY NOT IMPLEMENTED None None    "
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/usinggoedms/",
 	"title": "Using goEDMS",
 	"tags": [],
-	"description": "How to use goEDMS",
-	"content": ""
+	"description": "",
+	"content": "Using goEDMS The Kind of Important Part How to power up your home documentation system!\n"
 },
 {
 	"uri": "https://deranjer.github.io/goEDMSDocs/",
 	"title": "Welcome to goEDMS Documentation",
 	"tags": [],
-	"description": "How to use goEDMS",
-	"content": ""
+	"description": "",
+	"content": "Welcome to goEDMS Documentation Let the Fun Begin! Welcome to the goEDMS Documentation Site! If you have questions/issues please open a github issue or jump in Gitter.\n"
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/installation/running-from-source/",
+	"title": "Running from Source",
+	"tags": [],
+	"description": "",
+	"content": "Running from Source Requirements  Go version 1.13 Tesseract binary Imagemagick binary  Optional Installs To work on/edit the frontend you need the following:\n Node yarn parcel  Once you have the backend requirements, edit the serverConfig.toml with the bin paths to tesseract and imagemagick. In the root of the project run go get to download all the dependencies (ensure go.mod exists) and then start the server with go run main.go. This will run the backend server, which, by default, serve the \u0026ldquo;built\u0026rdquo; frontend (located in \u0026ldquo;public/built\u0026rdquo;).\nHowever, if you want to run a \u0026ldquo;live\u0026rdquo; version of the frontend you need to enter the \u0026ldquo;public\u0026rdquo; folder, then run yarn install. This should install every package you need from yarn.lock.\nThen you can run parcel run index.html and parcel will server up the source of the React App, which you can access on (by default) :1234. To connect your live frontend to the backend you need to edit frontend-config.js with the apiURL to your backend. If you make changes to the frontend and want to have the backend serve it, run parcel build index.html and then copy the files into the \u0026ldquo;built\u0026rdquo; directory (although delete frontend-config.*.js since that is dynamically generated by the backend).\n"
+},
+{
+	"uri": "https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/",
+	"title": "Running With Docker",
+	"tags": [],
+	"description": "",
+	"content": "Running with Docker I\u0026rsquo;ve never used Docker before, so hopefully this is all setup in the recommended way. Feel free to open a ticket or chat in gitter with recommendations\n Requirements  Docker A copy of serverConfig.toml from the repo at dist-specific-files\\docker\\serverConfig.toml  Install Steps Create the following directories (you can name them as you want):\n documents - your document library ingress - files placed in here will be scanned in temp - files that are converted for OCR will be stored here. Usually safe to delete done - ingressed files will be moved out of the ingress folder to this one  Create the following file:\n goedms.log  Docker setup First, pull the docker image docker pull deranjer/goedms. Then edit serverConfig.toml with your correct settings. The most important change will be to change APIURL in the serverConfig section. This URL will be the in the following format: http://192.168.1.10:8000. The IP should be your external IP (not the docker ip addr). The port should be the external port as well.\nNext, we need to start the docker container. We are mounting the directories we created earlier into the container, as well as the serverConfig.toml and goedms.log file. When goEDMS starts it will read the config in and configure itself, and then output to the log file.\n\u0026gt;docker run -d -p 8000:8000 --name goedms -v /sourceDir/documents:/opt/goEDMS/documents -v /sourceDir/ingress:/opt/goEDMS/ingress -v /sourceDir/tmp:/opt/goEDMS/temp -v /sourceDir/done:/opt/goEDMS/done -v /sourceDir/serverConfig.toml:/opt/goEDMS/serverConfig.toml -v /sourceDir/goedms.log:/opt/goEDMS/goedms.log deranjer/goedms:latest\rThe docker container should start and continue running unless it encounters an error. You can then access goEDMS from your external IP and port.\n"
 },
 {
 	"uri": "https://deranjer.github.io/goEDMSDocs/categories/",

@@ -6,10 +6,83 @@
     <description>Recent content in Welcome to goEDMS Documentation on goEDMS Documentations</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2020 15:28:02 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2020 22:53:19 -0500</lastBuildDate>
     
 	<atom:link href="https://deranjer.github.io/goEDMSDocs/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Basics</title>
+      <link>https://deranjer.github.io/goEDMSDocs/gettingstarted/basics/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/gettingstarted/basics/</guid>
+      <description>The Basics EDMS stands for Electronic Document Management System. Essentially this is used to scan and organize all of your documents. OCR is used to extract the text from PDF&amp;rsquo;s, Images, or other formats that we cannot natively get text from.
+goEDMS is an EDMS server for home users to scan in receipts/documents and search all the text in them. The main focus of goEDMS is simplicity (to setup and use) as well as speed and reliability.</description>
+    </item>
+    
+    <item>
+      <title>Installing from Packages</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/installing-from-packages/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/installing-from-packages/</guid>
+      <description>Installing from Packages Requirements  imagemagick tesseract-ocr  The listed package names are the debian package names, they may be named different for your distribution. An installer/package is not available for Windows currently.
+ The preferred method for installation is to install the dependencies first, then the .deb/.rpm.
+The .deb/.rpm packages assume you are using systemd as an init system as they install a systemd init file for goEDMS
+ So an example install would go as follows:</description>
+    </item>
+    
+    <item>
+      <title>The Basics</title>
+      <link>https://deranjer.github.io/goEDMSDocs/usinggoedms/basics/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/usinggoedms/basics/</guid>
+      <description>The Basic Flow Adding Documents Adding documents is currently supported via two methods. The first is by placing them in the &amp;ldquo;ingress&amp;rdquo; folder. The backend periodically scans the folder and adds any documents placed in that folder. The other method is by uploading them from the web interface. I hope to add a few more methods at some point.
+Searching Documents On the react frontend there is a search box, enter your search term there.</description>
+    </item>
+    
+    <item>
+      <title>Installing Manually/From Archive</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/installing-manually/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/installing-manually/</guid>
+      <description>Installing from Compressed Archive This is the only option for Windows currently, and is also available for Linux and MacOS.
+Requirements  imagemagick tesseract-ocr  For linux install the above packages from your package manager, they should be available for most distributions, although those are the debian package names, they might be named different for your distro. For Windows download the installers for both programs and install them in your preferred location.</description>
+    </item>
+    
+    <item>
+      <title>The Server Config File</title>
+      <link>https://deranjer.github.io/goEDMSDocs/usinggoedms/server-config-file/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/usinggoedms/server-config-file/</guid>
+      <description>The Basics The serverConfig.toml file is what stores all of the configuration for goEDMS. It can be either placed in the same directory as the binary file, or in a folder named config that is in the same directory as the binary. The serverConfig.toml file should have basic documentation in it on what the various settings do, that will be added here and maybe some more explanation.
+serverConfig    Section Option Description Input Format Notes     serverConfig ServerPort Required to input as string String This is the port you want the server to bind to.</description>
+    </item>
+    
+    <item>
+      <title>Running from Source</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/running-from-source/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/running-from-source/</guid>
+      <description>Running from Source Requirements  Go version 1.13 Tesseract binary Imagemagick binary  Optional Installs To work on/edit the frontend you need the following:
+ Node yarn parcel  Once you have the backend requirements, edit the serverConfig.toml with the bin paths to tesseract and imagemagick. In the root of the project run go get to download all the dependencies (ensure go.mod exists) and then start the server with go run main.</description>
+    </item>
+    
+    <item>
+      <title>Running With Docker</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/</guid>
+      <description>Running with Docker I&amp;rsquo;ve never used Docker before, so hopefully this is all setup in the recommended way. Feel free to open a ticket or chat in gitter with recommendations
+ Requirements  Docker A copy of serverConfig.toml from the repo at dist-specific-files\docker\serverConfig.toml  Install Steps Create the following directories (you can name them as you want):
+ documents - your document library ingress - files placed in here will be scanned in temp - files that are converted for OCR will be stored here.</description>
+    </item>
     
   </channel>
 </rss>

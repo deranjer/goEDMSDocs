@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/goEDMSDocs/images/favicon.png" type="image/png">
 
-    <title>Welcome to goEDMS Documentation :: goEDMS Documentations</title>
+    <title>Installing Manually/From Archive :: goEDMS Documentations</title>
 
     
     <link href="/goEDMSDocs/css/nucleus.css?1580498635" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/goEDMSDocs/">
+  <body class="" data-url="/goEDMSDocs/installation/installing-manually/">
     <nav id="sidebar" class="">
 
 
@@ -145,7 +145,7 @@
   
     
     <li data-nav-id="/goEDMSDocs/installation/" title="Installation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -188,7 +188,7 @@
  
   
     
-      <li data-nav-id="/goEDMSDocs/installation/installing-manually/" title="Installing Manually/From Archive" class="dd-item ">
+      <li data-nav-id="/goEDMSDocs/installation/installing-manually/" title="Installing Manually/From Archive" class="dd-item active">
         <a href="/goEDMSDocs/installation/installing-manually/">
         Installing Manually/From Archive
         
@@ -353,30 +353,106 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/goEDMSDocs/'>Welcome to goEDMS Documentation</a> > <a href='/goEDMSDocs/installation/'>Installation</a> > Installing Manually/From Archive
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installing-from-compressed-archive">Installing from Compressed Archive</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Installing Manually/From Archive
+            </h1>
           
 
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h3 id="welcome-to-goedms-documentation">Welcome to goEDMS Documentation</h3>
-<h1 id="let-the-fun-begin">Let the Fun Begin!</h1>
-<p>Welcome to the goEDMS Documentation Site! If you have questions/issues please open a github issue or jump in Gitter.</p>
+<h3 id="installing-from-compressed-archive">Installing from Compressed Archive</h3>
+<p>This is the only option for Windows currently, and is also available for Linux and MacOS.</p>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>imagemagick</li>
+<li>tesseract-ocr</li>
+</ul>
+<p>For linux install the above packages from your package manager, they should be available for most distributions, although those are the debian package names, they might be named different for your distro.  For Windows download the installers for both programs and install them in your preferred location.</p>
+<h4 id="recommended-steps">Recommended Steps</h4>
+<ul>
+<li>Make Directory for goEDMS</li>
+<li>Extract the archive at the root of the directory</li>
+<li>Ensure the goEDMS binary is marked as executable</li>
+<li>Make user specifically to run goEDMS</li>
+<li>Make the user owner of the goEDMS directory</li>
+<li>Modify the ServerConfig.toml file to reflect your desired settings</li>
+<li>Add goEDMS to your init system (a systemd start file is included in the repo in &ldquo;dist-specific-files\Linux-systemd&rdquo;)</li>
+<li>Run the goEDMS binary manually to watch for errors</li>
+<li>Check the goedms.log file for errors if it starts successfully</li>
+<li>Start goEDMS via your init system</li>
+</ul>
+
+
+<footer class=" footline" >
 	
-  
-        
-            </div> 
+</footer>
+
+
         
         </div> 
         
@@ -443,6 +519,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -455,6 +532,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -472,6 +552,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -487,6 +568,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -575,8 +659,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/goEDMSDocs/installation/installing-from-packages/" title="Installing from Packages"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/goEDMSDocs/gettingstarted/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/goEDMSDocs/installation/running-from-source/" title="Running from Source" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -1,15 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Installing goEDMS on goEDMS Documentations</title>
+    <title>Installation on goEDMS Documentations</title>
     <link>https://deranjer.github.io/goEDMSDocs/installation/</link>
-    <description>Recent content in Installing goEDMS on goEDMS Documentations</description>
+    <description>Recent content in Installation on goEDMS Documentations</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 Jan 2020 15:28:02 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2020 22:53:19 -0500</lastBuildDate>
     
 	<atom:link href="https://deranjer.github.io/goEDMSDocs/installation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installing from Packages</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/installing-from-packages/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/installing-from-packages/</guid>
+      <description>Installing from Packages Requirements  imagemagick tesseract-ocr  The listed package names are the debian package names, they may be named different for your distribution. An installer/package is not available for Windows currently.
+ The preferred method for installation is to install the dependencies first, then the .deb/.rpm.
+The .deb/.rpm packages assume you are using systemd as an init system as they install a systemd init file for goEDMS
+ So an example install would go as follows:</description>
+    </item>
+    
+    <item>
+      <title>Installing Manually/From Archive</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/installing-manually/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/installing-manually/</guid>
+      <description>Installing from Compressed Archive This is the only option for Windows currently, and is also available for Linux and MacOS.
+Requirements  imagemagick tesseract-ocr  For linux install the above packages from your package manager, they should be available for most distributions, although those are the debian package names, they might be named different for your distro. For Windows download the installers for both programs and install them in your preferred location.</description>
+    </item>
+    
+    <item>
+      <title>Running from Source</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/running-from-source/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/running-from-source/</guid>
+      <description>Running from Source Requirements  Go version 1.13 Tesseract binary Imagemagick binary  Optional Installs To work on/edit the frontend you need the following:
+ Node yarn parcel  Once you have the backend requirements, edit the serverConfig.toml with the bin paths to tesseract and imagemagick. In the root of the project run go get to download all the dependencies (ensure go.mod exists) and then start the server with go run main.</description>
+    </item>
+    
+    <item>
+      <title>Running With Docker</title>
+      <link>https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/</guid>
+      <description>Running with Docker I&amp;rsquo;ve never used Docker before, so hopefully this is all setup in the recommended way. Feel free to open a ticket or chat in gitter with recommendations
+ Requirements  Docker A copy of serverConfig.toml from the repo at dist-specific-files\docker\serverConfig.toml  Install Steps Create the following directories (you can name them as you want):
+ documents - your document library ingress - files placed in here will be scanned in temp - files that are converted for OCR will be stored here.</description>
+    </item>
     
   </channel>
 </rss>

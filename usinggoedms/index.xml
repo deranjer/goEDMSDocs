@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Using goEDMS on goEDMS Documentations</title>
+    <link>https://deranjer.github.io/goEDMSDocs/usinggoedms/</link>
+    <description>Recent content in Using goEDMS on goEDMS Documentations</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Jan 2020 22:53:19 -0500</lastBuildDate>
+    
+	<atom:link href="https://deranjer.github.io/goEDMSDocs/usinggoedms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Basics</title>
+      <link>https://deranjer.github.io/goEDMSDocs/usinggoedms/basics/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/usinggoedms/basics/</guid>
+      <description>The Basic Flow Adding Documents Adding documents is currently supported via two methods. The first is by placing them in the &amp;ldquo;ingress&amp;rdquo; folder. The backend periodically scans the folder and adds any documents placed in that folder. The other method is by uploading them from the web interface. I hope to add a few more methods at some point.
+Searching Documents On the react frontend there is a search box, enter your search term there.</description>
+    </item>
+    
+    <item>
+      <title>The Server Config File</title>
+      <link>https://deranjer.github.io/goEDMSDocs/usinggoedms/server-config-file/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/usinggoedms/server-config-file/</guid>
+      <description>The Basics The serverConfig.toml file is what stores all of the configuration for goEDMS. It can be either placed in the same directory as the binary file, or in a folder named config that is in the same directory as the binary. The serverConfig.toml file should have basic documentation in it on what the various settings do, that will be added here and maybe some more explanation.
+serverConfig    Section Option Description Input Format Notes     serverConfig ServerPort Required to input as string String This is the port you want the server to bind to.</description>
+    </item>
+    
+  </channel>
+</rss>

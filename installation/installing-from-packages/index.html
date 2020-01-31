@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/goEDMSDocs/images/favicon.png" type="image/png">
 
-    <title>Welcome to goEDMS Documentation :: goEDMS Documentations</title>
+    <title>Installing from Packages :: goEDMS Documentations</title>
 
     
     <link href="/goEDMSDocs/css/nucleus.css?1580498635" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/goEDMSDocs/">
+  <body class="" data-url="/goEDMSDocs/installation/installing-from-packages/">
     <nav id="sidebar" class="">
 
 
@@ -145,7 +145,7 @@
   
     
     <li data-nav-id="/goEDMSDocs/installation/" title="Installation" class="dd-item 
-        
+        parent
         
         
         ">
@@ -169,7 +169,7 @@
  
   
     
-      <li data-nav-id="/goEDMSDocs/installation/installing-from-packages/" title="Installing from Packages" class="dd-item ">
+      <li data-nav-id="/goEDMSDocs/installation/installing-from-packages/" title="Installing from Packages" class="dd-item active">
         <a href="/goEDMSDocs/installation/installing-from-packages/">
         Installing from Packages
         
@@ -353,30 +353,105 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/goEDMSDocs/'>Welcome to goEDMS Documentation</a> > <a href='/goEDMSDocs/installation/'>Installation</a> > Installing from Packages
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installing-from-packages">Installing from Packages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              Installing from Packages
+            </h1>
           
 
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h3 id="welcome-to-goedms-documentation">Welcome to goEDMS Documentation</h3>
-<h1 id="let-the-fun-begin">Let the Fun Begin!</h1>
-<p>Welcome to the goEDMS Documentation Site! If you have questions/issues please open a github issue or jump in Gitter.</p>
+<h3 id="installing-from-packages">Installing from Packages</h3>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>imagemagick</li>
+<li>tesseract-ocr</li>
+</ul>
+
+<div class="notices tip" ><p>The listed package names are the debian package names, they may be named different for your distribution.  An installer/package is not available for Windows currently.</p>
+</div>
+
+<p>The preferred method for installation is to install the dependencies first, then the .deb/.rpm.</p>
+
+<div class="notices warning" ><p>The .deb/.rpm packages assume you are using systemd as an init system as they install a systemd init file for goEDMS</p>
+</div>
+
+<p>So an example install would go as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install tesseract-ocr imagemagick
+dpkg -i goEDMS-version.deb
+</code></pre></div><p>The default install path for goEDMS is <code>/opt/goEDMS</code>.</p>
+<p>After install goEDMS should automatically start.  However, most likely you will want to edit the <code>serverConfig.toml</code> (located in <code>/opt/goEDMS</code>) with your specific settings.  So you can stop goEDMS <code>systemctl stop goedms</code>, then edit the <code>serverConfig.toml</code> and then start goEDMS (<code>systemctl start goedms</code>).  The initial startup log will appear in syslog, (or view the systemctl log), but after that the log will appear in <code>goedms.log</code>, located in <code>/opt/goEDMS/</code>.</p>
+
+
+<footer class=" footline" >
 	
-  
-        
-            </div> 
+</footer>
+
+
         
         </div> 
         
@@ -443,6 +518,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -455,6 +531,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -471,6 +548,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -575,8 +655,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/goEDMSDocs/installation/" title="Installation"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/goEDMSDocs/gettingstarted/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/goEDMSDocs/installation/installing-manually/" title="Installing Manually/From Archive" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

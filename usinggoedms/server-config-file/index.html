@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/goEDMSDocs/images/favicon.png" type="image/png">
 
-    <title>Welcome to goEDMS Documentation :: goEDMS Documentations</title>
+    <title>The Server Config File :: goEDMS Documentations</title>
 
     
     <link href="/goEDMSDocs/css/nucleus.css?1580498635" rel="stylesheet">
@@ -35,7 +35,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/goEDMSDocs/">
+  <body class="" data-url="/goEDMSDocs/usinggoedms/server-config-file/">
     <nav id="sidebar" class="">
 
 
@@ -253,7 +253,7 @@
   
     
     <li data-nav-id="/goEDMSDocs/usinggoedms/" title="Using goEDMS" class="dd-item 
-        
+        parent
         
         
         ">
@@ -296,7 +296,7 @@
  
   
     
-      <li data-nav-id="/goEDMSDocs/usinggoedms/server-config-file/" title="The Server Config File" class="dd-item ">
+      <li data-nav-id="/goEDMSDocs/usinggoedms/server-config-file/" title="The Server Config File" class="dd-item active">
         <a href="/goEDMSDocs/usinggoedms/server-config-file/">
         The Server Config File
         
@@ -353,30 +353,241 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/goEDMSDocs/'>Welcome to goEDMS Documentation</a> > <a href='/goEDMSDocs/usinggoedms/'>Using goEDMS</a> > The Server Config File
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#the-basics">The Basics</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
-          <div id="chapter">
-        
         <div id="body-inner">
+          
+            <h1>
+              
+              The Server Config File
+            </h1>
           
 
         
 
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
- 
-<h3 id="welcome-to-goedms-documentation">Welcome to goEDMS Documentation</h3>
-<h1 id="let-the-fun-begin">Let the Fun Begin!</h1>
-<p>Welcome to the goEDMS Documentation Site! If you have questions/issues please open a github issue or jump in Gitter.</p>
+<h3 id="the-basics">The Basics</h3>
+<p>The <code>serverConfig.toml</code> file is what stores all of the configuration for goEDMS.  It can be either placed in the same directory as the binary file, or in a folder named <code>config</code> that is in the same directory as the binary.  The <code>serverConfig.toml</code> file should have basic documentation in it on what the various settings do, that will be added here and maybe some more explanation.</p>
+<h4 id="serverconfig">serverConfig</h4>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Option</th>
+<th>Description</th>
+<th>Input Format</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>serverConfig</td>
+<td>ServerPort</td>
+<td>Required to input as string</td>
+<td>String</td>
+<td>This is the port you want the server to bind to.</td>
+</tr>
+<tr>
+<td>serverConfig</td>
+<td>ServerAddr</td>
+<td>Put in the IP address you want to bind to as string, if blank will bind to all available addresses</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>serverConfig</td>
+<td>APIURL</td>
+<td>This is for EXTREME edge cases where you want to manually force the API URL, like with Docker, usually leave blank</td>
+<td>String</td>
+<td>In format (usually, unless running behind proxy) <code>http://192.168.1.10:8000</code></td>
+</tr>
+<tr>
+<td>documentLibrary</td>
+<td>DocumentFileSystemLocation</td>
+<td>Location to store documents</td>
+<td>String</td>
+<td>Relative or absolute path accepted, the server will convert any relative path to an absolute path.</td>
+</tr>
+<tr>
+<td>documentLibrary</td>
+<td>DefaultNewDocumentFolder</td>
+<td>default folder that ingressed documents will be placed in (inside the Document library), for multiple folders deep can do &lsquo;2020/New&rsquo;</td>
+<td>String</td>
+<td>If <code>PreserveDirStructure</code> is set to false all files will go in the <code>New</code> folder, if it is true, the New folder will be created but not used.</td>
+</tr>
+<tr>
+<td>ingress</td>
+<td>IngressPath</td>
+<td>default path that the server will scan for new documents</td>
+<td>String</td>
+<td>Can be absolute or relative</td>
+</tr>
+<tr>
+<td>ingress.scheduling</td>
+<td>IngressInterval</td>
+<td>number of minutes between scans of the ingress folder</td>
+<td>Integer</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ingress.completed</td>
+<td>IngressDeleteOnProcess</td>
+<td>#If True will delete files from ingress folder after processed (will leave ones if they produce error), if false will move to another folder</td>
+<td>Boolean</td>
+<td>Will move it to folder &ldquo;done&rdquo; by default</td>
+</tr>
+<tr>
+<td>ingress.completed</td>
+<td>IngressMoveFolder</td>
+<td>default path that the server will move processed ingress documents to</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ingress.handling</td>
+<td>PreserveDirStructure</td>
+<td>if nested folders are in the ingress path will copy that existing structure to document storage</td>
+<td>Boolean</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ocr</td>
+<td>TesseractBin</td>
+<td>#Path to Tesseract binary (required for OCR) #Windows paths need to be formatted as such: <code>C:\\Program Files\\Tesseract-OCR\\tesseract.exe</code></td>
+<td>String</td>
+<td>Common linux path is <code>&quot;/usr/bin/tesseract&quot;</code></td>
+</tr>
+<tr>
+<td>ocr</td>
+<td>MagickBin</td>
+<td>Path to ImageMagick (required for OCR)</td>
+<td>String</td>
+<td>IMPORTANT For linux, the MagickBin command needs to be to the &ldquo;convert&rdquo; binary, for Windows it is &ldquo;magick.exe&rdquo;</td>
+</tr>
+<tr>
+<td>authentication</td>
+<td>CURRENTLY NOT IMPLEMENTED</td>
+<td>None</td>
+<td>None</td>
+<td></td>
+</tr>
+<tr>
+<td>reverseProxy</td>
+<td>ProxyEnabled</td>
+<td>This is for setting up goEDMS behind a reverse Proxy (with SSL), as a subdomain route (<a href="https://goedms.domain.com">https://goedms.domain.com</a>)</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>reverseProxy</td>
+<td>BaseURL</td>
+<td>URL is CASE SENSITIVE # MUST be in the subdomain format, NO trailing slash (suburl proxy does not work, i.e. <a href="https://domain.com/goedms">https://domain.com/goedms</a>)</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>frontend</td>
+<td>NewDocumentNumber</td>
+<td>CURRENTLY NOT IMPLEMENTED</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td>logging</td>
+<td>Level</td>
+<td>debug, info, warn, error, fatal</td>
+<td>String</td>
+<td>Only accepts the description values, nothing else</td>
+</tr>
+<tr>
+<td>logging</td>
+<td>OutputPath</td>
+<td>file or stdout</td>
+<td>String</td>
+<td>Only accepts &ldquo;file&rdquo; or &ldquo;stdout&rdquo; stdout just outputs it to the shell or syslog</td>
+</tr>
+<tr>
+<td>logging</td>
+<td>LogFileLocation</td>
+<td>Location of Log file (if file selected for OutputPath)</td>
+<td>String</td>
+<td>None</td>
+</tr>
+<tr>
+<td>notifications</td>
+<td>PushBulletToken</td>
+<td>CURRENTLY NOT IMPLEMENTED</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+
+
+<footer class=" footline" >
 	
-  
-        
-            </div> 
+</footer>
+
+
         
         </div> 
         
@@ -523,6 +734,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -535,6 +747,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -551,6 +766,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -575,8 +791,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/goEDMSDocs/usinggoedms/basics/" title="The Basics"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/goEDMSDocs/gettingstarted/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/goEDMSDocs/usinggoedms/basics/" title="The Basics" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on goEDMS Documentations</title>
+    <link>https://deranjer.github.io/goEDMSDocs/gettingstarted/</link>
+    <description>Recent content in Getting Started on goEDMS Documentations</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Jan 2020 22:43:47 -0500</lastBuildDate>
+    
+	<atom:link href="https://deranjer.github.io/goEDMSDocs/gettingstarted/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Basics</title>
+      <link>https://deranjer.github.io/goEDMSDocs/gettingstarted/basics/</link>
+      <pubDate>Thu, 30 Jan 2020 22:43:47 -0500</pubDate>
+      
+      <guid>https://deranjer.github.io/goEDMSDocs/gettingstarted/basics/</guid>
+      <description>The Basics EDMS stands for Electronic Document Management System. Essentially this is used to scan and organize all of your documents. OCR is used to extract the text from PDF&amp;rsquo;s, Images, or other formats that we cannot natively get text from.
+goEDMS is an EDMS server for home users to scan in receipts/documents and search all the text in them. The main focus of goEDMS is simplicity (to setup and use) as well as speed and reliability.</description>
+    </item>
+    
+  </channel>
+</rss>
