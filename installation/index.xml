@@ -51,7 +51,7 @@ Requirements  imagemagick tesseract-ocr  For linux install the above packages fr
       <guid>https://deranjer.github.io/goEDMSDocs/installation/running-with-docker/</guid>
       <description>Running with Docker I&amp;rsquo;ve never used Docker before, so hopefully this is all setup in the recommended way. Feel free to open a ticket or chat in gitter with recommendations
  Requirements  Docker A copy of serverConfig.toml from the repo at dist-specific-files\docker\serverConfig.toml  Install Steps Create the following directories (you can name them as you want):
- documents - your document library ingress - files placed in here will be scanned in temp - files that are converted for OCR will be stored here.</description>
+ documents - your document library folder ingress - files placed in this folder will be scanned in temp - files that are converted for OCR will be stored here.</description>
     </item>
     
   </channel>
