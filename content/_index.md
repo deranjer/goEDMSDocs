@@ -10,3 +10,5 @@ chapter = true
 # Let the Fun Begin!
 
 Welcome to the goEDMS Documentation Site! If you have questions/issues please open a github issue or jump in Gitter.
+
+![goEDMS Homepage](goEDMS.png)

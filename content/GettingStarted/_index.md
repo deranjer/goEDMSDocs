@@ -9,4 +9,6 @@ chapter = true
 
 # goEDMS
 
-Discover how goEDMS can help you organize and search your documents.
+Discover how goEDMS can help you organize and search your documents. Feel free to watch this short introduction to the GUI of goEDMS.
+
+{{< youtube IW7aZNW08l4 >}}
