@@ -31,4 +31,4 @@ dpkg -i goEDMS-version.deb
 
 The default install path for goEDMS is `/opt/goEDMS`.
 
-After install goEDMS should automatically start.  However, most likely you will want to edit the `serverConfig.toml` (located in `/opt/goEDMS`) with your specific settings.  So you can stop goEDMS `systemctl stop goedms`, then edit the `serverConfig.toml` and then start goEDMS (`systemctl start goedms`).  The initial startup log will appear in syslog, (or view the systemctl log), but after that the log will appear in `goedms.log`, located in `/opt/goEDMS/`.
+After install goEDMS should automatically start.  However, most likely you will want to edit the `serverConfig.toml` (located in `/opt/goEDMS`) with your specific settings.  So you can stop goEDMS `systemctl stop goEDMS`, then edit the `serverConfig.toml` and then start goEDMS (`systemctl start goEDMS`).  The initial startup log will appear in syslog, (or view the systemctl log), but after that the log will appear in `goedms.log`, located in `/opt/goEDMS/`.
