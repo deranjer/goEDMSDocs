@@ -50,3 +50,7 @@ Next, we need to start the docker container.  We are mounting the directories we
 ```
 
 The docker container should start and continue running unless it encounters an error.  You can then access goEDMS from your external IP and port.
+
+#### Docker Compose
+
+There is a docker-compose file `dist-specific-files\docker\docker-compose.yml` that can be used to start goEDMS as well, just edit it to fit your needs then `docker-compose up`.
